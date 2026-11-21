@@ -3,3 +3,6 @@ node_modules/
 .devvit/
 failed-install/
 failed-lock.json
+.env
+.env.*
+pigeon-shift-cover.png
