@@ -1,0 +1,9 @@
+* { box-sizing: border-box; }
+body { margin: 0; color: #252825; background: #f9f3df; font-family: system-ui, sans-serif; }
+main { text-align: center; padding: 17px 14px; }
+.bird { font-size: 2.1rem; line-height: 1; margin: 0 0 6px; }
+h1 { font: bold clamp(1.8rem, 8vw, 2.8rem)/1 Georgia, serif; letter-spacing: -.045em; margin: 0; }
+h1 span { color: #b64724; }
+p { margin: 8px auto; max-width: 33ch; font-size: .85rem; }
+button { margin-top: 3px; padding: 8px 16px; min-height: 40px; background: #f6dc83; color: inherit; border: 2px solid; border-radius: 7px; font: 700 .95rem system-ui, sans-serif; box-shadow: 3px 3px 0; cursor: pointer; }
+button:focus-visible { outline: 3px solid #183fbe; outline-offset: 3px; }

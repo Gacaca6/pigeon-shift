@@ -1,0 +1,5 @@
+dist/
+node_modules/
+.devvit/
+failed-install/
+failed-lock.json

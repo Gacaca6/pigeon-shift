@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "pigeon-shift",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": { "entry": "splash.html", "height": "regular" },
+      "game": { "entry": "index.html", "height": "tall" }
+    }
+  },
+  "server": { "dir": "dist/server", "entry": "index.cjs" },
+  "permissions": { "redis": true, "reddit": { "enable": true }, "http": { "enable": false } },
+  "menu": {
+    "items": [{
+      "label": "Post Pigeon Shift",
+      "location": "subreddit",
+      "forUserType": "moderator",
+      "endpoint": "/internal/menu/post"
+    }]
+  },
+  "scripts": { "build": "npm run build" }
+}

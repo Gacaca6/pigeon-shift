@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Pigeon Shift</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow" id="date"></p>
+      <h1>Pigeon Shift<span>.</span></h1>
+      <p>You're a pigeon with three lost parcels and one way home.</p>
+    </header>
+    <section class="dispatch" aria-label="Delivery board">
+      <div class="toolbar">
+        <strong id="steps"></strong>
+        <button id="undo" type="button">Undo</button>
+        <button id="restart" type="button">Restart</button>
+      </div>
+      <div id="board" class="board" aria-label="Neighborhood"></div>
+      <p id="status" class="status" role="status"></p>
+      <button id="share" type="button" hidden>Copy score</button>
+      <output id="share-result"></output>
+    </section>
+    <aside aria-label="Parcel checklist">
+      <h2>Lost &amp; found</h2>
+      <ol id="parcels"></ol>
+      <p class="help">Tap an adjacent tile or use arrow keys. Pick up each parcel before its matching doorstep. Each tile can be visited once. End at the rooftop.</p>
+      <div class="handoff">
+        <h2>Courier handoff</h2>
+        <button id="reveal-hint" type="button">Reveal one street</button>
+        <form id="leave-hint" hidden>
+          <label for="hint-tile">Mark one street for the next courier</label>
+          <select id="hint-tile" required></select>
+          <button type="submit">Leave hint</button>
+        </form>
+        <p id="hint-status" role="status"></p>
+      </div>
+    </aside>
+  </main>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

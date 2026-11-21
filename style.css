@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: system-ui, sans-serif;
+  color: #252825;
+  background: #f9f3df;
+  --ink: #252825;
+}
+body { margin: 0; }
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(20px, 5vw, 48px);
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 22px;
+}
+header { grid-column: 1 / -1; }
+header p { margin: 8px 0 0; font-weight: 600; }
+.eyebrow { text-transform: uppercase; color: #555e45; letter-spacing: .08em; font-size: .75rem; }
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(2.7rem, 8vw, 5rem);
+  line-height: 1;
+  letter-spacing: -.06em;
+  margin: 8px 0;
+}
+h1 span { color: #b64724; }
+.dispatch, aside {
+  padding: clamp(9px, 3vw, 21px);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: #fffbef;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.toolbar { display: flex; align-items: center; gap: 7px; margin-bottom: 12px; }
+.toolbar strong { margin-right: auto; }
+button { font: inherit; color: inherit; }
+.toolbar button {
+  padding: 6px 9px;
+  background: #fffbef;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.toolbar button:disabled { opacity: .5; cursor: default; }
+.board { display: grid; grid-template-columns: repeat(6, 1fr); gap: clamp(3px, 1vw, 8px); }
+.tile {
+  min-width: 0;
+  padding: 0;
+  aspect-ratio: 1;
+  border: 1px solid #757b67;
+  border-radius: 6px;
+  background: #eeefde;
+  color: #304734;
+  font-size: clamp(.9rem, 4vw, 1.7rem);
+  opacity: 1;
+}
+.tile[data-kind="closed"] { background: #324039; color: #e1e3cf; }
+.tile[data-kind="parcel"] { background: #f6dc83; }
+.tile[data-kind="drop"] { background: #d3e6f4; border: 2px dashed #3f5667; }
+.tile[data-kind="home"] { background: #e9c3ce; }
+.tile.used { opacity: .46; background: #d3cbbc; }
+.tile.available { outline: 2px solid #377250; outline-offset: -3px; cursor: pointer; }
+.tile.available:hover { background: #daf0c0; }
+.tile.current { background: #f6683d; color: #251a12; outline: 2px solid #252825; outline-offset: -3px; }
+button:focus-visible { outline: 3px solid #183fbe !important; outline-offset: -3px; }
+.status { margin: 12px 0 0; min-height: 2.6em; font-weight: 650; }
+aside h2 { font-family: Georgia, serif; margin: 0 0 12px; font-size: 1.5rem; }
+ol { list-style: none; padding: 0; margin: 0; }
+li { padding: 7px 0; border-bottom: 1px solid #c8c7af; font-size: .9rem; }
+li.delivered { color: #23533a; font-weight: 700; }
+.help { margin-bottom: 0; font-size: .92rem; line-height: 1.45; }
+@media (max-width: 640px) {
+  main { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .tile { font-size: clamp(1.15rem, 5vw, 1.8rem); }
+}
+
+#share { padding: 7px 12px; border: 1px solid var(--ink); border-radius: 6px; background: #f6dc83; cursor: pointer; }
+#share-result { display: block; margin-top: 6px; font-size: .9rem; }
+.tile.current { position: relative; }
+.tile.current::after { content: "🐦"; position: absolute; right: -3px; top: -7px; font-size: .75em; }
+.handoff { border-top: 1px solid #c8c7af; margin-top: 16px; padding-top: 16px; }
+.handoff button, .handoff select { padding: 7px 10px; border: 1px solid var(--ink); border-radius: 6px; background: #fffbef; font: inherit; }
+.handoff button { cursor: pointer; }
+.handoff form { margin: 10px 0; }
+.handoff label { margin-bottom: 4px; display: block; font-weight: 650; }
+.handoff p { margin-bottom: 0; font-size: .9rem; }
+.tile.clue { box-shadow: inset 0 0 0 3px #765495; }
+.tile.clue::before { content: "✦"; font-size: .6em; }
